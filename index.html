@@ -24,6 +24,7 @@
     <a href="#install" data-i18n="nav.install">Instalación</a>
     <a href="#news" data-i18n="nav.news">Novedades</a>
     <a href="#faq" data-i18n="nav.faq">Preguntas</a>
+    <a href="#support" class="nav-kofi" data-i18n="nav.support">Apoyar ☕</a>
   </nav>
   <button class="lang" id="lang" type="button" aria-label="Language">EN</button>
 </header>
@@ -39,10 +40,11 @@
     <img class="logo" src="assets/img/logo.png" alt="Dino Land 3D: Cape & Egg Collection" width="900" height="361">
     <p class="tagline" data-i18n="hero.tagline">Dos clásicos de plataformas de 16 bits en tu Nintendo 3DS: la pantalla táctil se convierte en un panel vivo y el 3D separa el escenario en capas.</p>
     <div class="cta">
-      <a class="btn btn-primary" id="download" href="https://github.com/ChrZazueta/DinoLand3D-3DS/releases/latest/download/DinoLand3D.3dsx">
+      <a class="btn btn-primary" id="download" href="https://github.com/ChrZazueta/DinoLand3D-3DS/releases/latest/download/DinoLand3D.cia">
         <span class="btn-icon" aria-hidden="true">⬇</span>
-        <span><span data-i18n="hero.download">Descargar</span> <span class="ver" id="ver">.3dsx</span></span>
+        <span><span data-i18n="hero.download">Descargar CIA</span> <span class="ver" id="ver"></span></span>
       </a>
+      <a class="btn btn-ghost" href="https://github.com/ChrZazueta/DinoLand3D-3DS/releases/latest/download/DinoLand3D.3dsx" data-i18n="hero.3dsx">Descargar .3dsx</a>
       <a class="btn btn-ghost" href="#install" data-i18n="hero.howto">Cómo instalar</a>
     </div>
     <p class="note" data-i18n-html="hero.note">Necesitas <b>tus propias copias</b> de los cartuchos. Aquí no se distribuye ninguna ROM.</p>
@@ -128,8 +130,18 @@
       <p data-i18n-html="s1.d">Una 3DS, 2DS o New 3DS con Luma3DS. Si aún no lo tienes, sigue <a href="https://3ds.hacks.guide/" target="_blank" rel="noopener">3ds.hacks.guide</a>.</p>
     </li>
     <li>
-      <h3 data-i18n="s2.t">Descarga la app</h3>
-      <p data-i18n-html="s2.d">Copia <code>DinoLand3D.3dsx</code> a la carpeta <code>/3ds/</code> de la SD. Aparecerá en el Homebrew Launcher.</p>
+      <h3 data-i18n="s2.t">Instala la app</h3>
+      <p data-i18n-html="s2.d">Instala <code>DinoLand3D.cia</code> con FBI (<strong>recomendado</strong>: se abre desde el menú HOME) o copia <code>DinoLand3D.3dsx</code> a la carpeta <code>/3ds/</code> de la SD para abrirla desde el Homebrew Launcher.</p>
+      <div class="qr-box">
+        <figure class="qr">
+          <img src="assets/img/qr-dinoland3d.svg" width="180" height="180" alt="QR: DinoLand3D.cia">
+          <figcaption><code>DinoLand3D.cia</code></figcaption>
+        </figure>
+        <div>
+          <h4 class="qr-title" data-i18n="qr.t">Instala con un QR desde FBI</h4>
+          <p data-i18n-html="qr.d">Con la consola conectada a internet, abre <strong>FBI</strong> → <strong>Remote Install</strong> → <strong>Scan QR Code</strong> y escanea este código. FBI descarga e instala la versión más reciente; después, la app se actualiza sola.</p>
+        </div>
+      </div>
     </li>
     <li>
       <h3 data-i18n="s3.t">Tus ROMs</h3>
@@ -148,7 +160,7 @@
   <div class="tree" aria-label="SD">
 <pre>sd:/
 └── 3ds/
-    ├── DinoLand3D.3dsx
+    ├── DinoLand3D.3dsx   <span data-i18n="tree.3dsx">← solo si usas el .3dsx</span>
     ├── dspfirm.cdc
     └── DinoLand3D/
         ├── Super.sfc
@@ -168,6 +180,16 @@
   <p class="center"><a class="btn btn-ghost" href="https://github.com/ChrZazueta/DinoLand3D-3DS/releases" target="_blank" rel="noopener" data-i18n="news.all">Ver todas las versiones</a></p>
 </section>
 
+<!-- ======================================================== apoyar === -->
+<section class="section" id="support">
+  <h2 data-i18n="support.title">Apoya el proyecto</h2>
+  <div class="support">
+    <p data-i18n="support.d">Dino Land 3D es gratis y lo seguirá siendo. Si te gusta y quieres invitarme un café, se agradece muchísimo. ☕</p>
+    <a class="btn btn-kofi" href="https://ko-fi.com/chrisplay" target="_blank" rel="noopener"><span aria-hidden="true">☕</span> <span data-i18n="support.btn">Invítame un café en Ko-fi</span></a>
+    <iframe id="kofiframe" src="https://ko-fi.com/chrisplay/?hidefeed=true&amp;widget=true&amp;embed=true&amp;preview=true" title="Ko-fi: chrisplay" height="712" loading="lazy"></iframe>
+  </div>
+</section>
+
 <!-- ============================================================ FAQ === -->
 <section class="section" id="faq">
   <h2 data-i18n="faq.title">Preguntas frecuentes</h2>
@@ -176,7 +198,7 @@
     <details><summary data-i18n="q2.q">¿Funciona en una Old 3DS?</summary><p data-i18n="q2.a">Sí, es la consola de referencia. El juego de 1990 va a 60 fps. El de 1995 usa un chip especial del cartucho y en escenas con muchos objetos rotando o escalando puede bajar en una Old 3DS; en una New 3DS va completo.</p></details>
     <details><summary data-i18n="q3.q">¿Cómo se activa el 3D?</summary><p data-i18n="q3.a">Sube el deslizador 3D durante el juego. En Ajustes → 3D puedes apagarlo del todo si prefieres más rendimiento. Con el deslizador abajo no cuesta nada.</p></details>
     <details><summary data-i18n="q4.q">¿Dónde se guardan mis partidas?</summary><p data-i18n="q4.a">En sd:/3ds/DinoLand3D/saves/. Se guardan al pausar, al ir al menú HOME y al salir. Los estados de guardado están en savestates/.</p></details>
-    <details><summary data-i18n="q5.q">¿Cómo actualizo?</summary><p data-i18n="q5.a">Con Wi-Fi, la app busca sola al abrirse y te avisa en el menú de juegos. También puedes buscar a mano en Ajustes → Actualizar. Después de instalar, cierra y vuelve a abrir la app.</p></details>
+    <details><summary data-i18n="q5.q">¿Cómo actualizo?</summary><p data-i18n="q5.a">Con Wi-Fi, la app busca sola al abrirse y te avisa en el menú de juegos; también puedes buscar a mano en Ajustes → Actualizar. Si la instalaste como CIA se reinicia sola ya actualizada; con el .3dsx, ciérrala y vuelve a abrirla. También puedes volver a escanear el QR.</p></details>
     <details><summary data-i18n="q6.q">¿Puedo cambiar el idioma?</summary><p data-i18n="q6.a">Sí: Ajustes → Idioma cambia entre español e inglés al momento.</p></details>
   </div>
 </section>
@@ -186,7 +208,7 @@
 <footer class="footer">
   <div class="ground" aria-hidden="true"></div>
   <p data-i18n="footer.legal">Proyecto de aficionado sin ánimo de lucro, no afiliado ni respaldado por ningún fabricante de consolas. No se distribuye ninguna ROM ni contenido de terceros. Basado en snes9x_3ds.</p>
-  <p class="muted">Dino Land 3D: Cape &amp; Egg Collection · <a href="https://github.com/ChrZazueta/DinoLand3D-3DS" target="_blank" rel="noopener">GitHub</a></p>
+  <p class="muted">Dino Land 3D: Cape &amp; Egg Collection · <a href="https://github.com/ChrZazueta/DinoLand3D-3DS" target="_blank" rel="noopener">GitHub</a> · <a href="https://ko-fi.com/chrisplay" target="_blank" rel="noopener">Ko-fi</a></p>
 </footer>
 
 <script src="assets/i18n.js"></script>
