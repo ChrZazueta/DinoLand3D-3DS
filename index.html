@@ -21,10 +21,10 @@
   <nav class="nav">
     <a href="#features" data-i18n="nav.features">Características</a>
     <a href="#gallery" data-i18n="nav.gallery">Galería</a>
+    <a href="#support" class="nav-kofi" data-i18n="nav.support">Apoyar ☕</a>
     <a href="#install" data-i18n="nav.install">Instalación</a>
     <a href="#news" data-i18n="nav.news">Novedades</a>
     <a href="#faq" data-i18n="nav.faq">Preguntas</a>
-    <a href="#support" class="nav-kofi" data-i18n="nav.support">Apoyar ☕</a>
   </nav>
   <button class="lang" id="lang" type="button" aria-label="Language">EN</button>
 </header>
@@ -121,8 +121,18 @@
   </div>
 </section>
 
+<!-- ======================================================== apoyar === -->
+<section class="section" id="support">
+  <h2 data-i18n="support.title">Apoya el proyecto</h2>
+  <div class="support">
+    <p data-i18n="support.d">Dino Land 3D es gratis y lo seguirá siendo. Si te gusta y quieres invitarme un café, se agradece muchísimo. ☕</p>
+    <a class="btn btn-kofi" href="https://ko-fi.com/chrisplay" target="_blank" rel="noopener"><span aria-hidden="true">☕</span> <span data-i18n="support.btn">Invítame un café en Ko-fi</span></a>
+    <iframe id="kofiframe" src="https://ko-fi.com/chrisplay/?hidefeed=true&amp;widget=true&amp;embed=true&amp;preview=true" title="Ko-fi: chrisplay" height="712" loading="lazy"></iframe>
+  </div>
+</section>
+
 <!-- =================================================== instalación === -->
-<section class="section" id="install">
+<section class="section alt" id="install">
   <h2 data-i18n="install.title">Instalación</h2>
   <ol class="steps">
     <li>
@@ -153,15 +163,20 @@
       </details>
     </li>
     <li>
-      <h3 data-i18n="s4.t">Sonido</h3>
-      <p data-i18n-html="s4.d">Para el audio hace falta <code>dspfirm.cdc</code> en <code>/3ds/</code>. Si no lo tienes, créalo con el DSP1 de la guía.</p>
+      <h3 data-i18n="s4.t">Activa el sonido (una sola vez)</h3>
+      <p data-i18n-html="s4.d">El audio necesita el archivo <code>dspfirm.cdc</code>, que sale de tu propia consola (no se puede distribuir). Si otros juegos homebrew ya tienen sonido, ya lo tienes. Si no:</p>
+      <ol class="substeps">
+        <li data-i18n-html="s4.a">Descarga <a href="https://github.com/zoogie/DSP1/releases/latest" target="_blank" rel="noopener">DSP1</a> (<code>DSP1.cia</code> o <code>DSP1.3dsx</code>).</li>
+        <li data-i18n-html="s4.b">Instálalo con FBI o cópialo a <code>/3ds/</code> y ábrelo una vez.</li>
+        <li data-i18n-html="s4.c">Crea <code>sdmc:/3ds/dspfirm.cdc</code> solo. Pulsa START para salir; ya lo puedes borrar.</li>
+      </ol>
     </li>
   </ol>
   <div class="tree" aria-label="SD">
 <pre>sd:/
 └── 3ds/
     ├── DinoLand3D.3dsx   <span data-i18n="tree.3dsx">← solo si usas el .3dsx</span>
-    ├── dspfirm.cdc
+    ├── dspfirm.cdc       <span data-i18n="tree.dsp">← audio (lo crea DSP1)</span>
     └── DinoLand3D/
         ├── Super.sfc
         ├── Super2.sfc
@@ -171,7 +186,7 @@
 </section>
 
 <!-- ======================================================= novedades === -->
-<section class="section alt" id="news">
+<section class="section" id="news">
   <h2 data-i18n="news.title">Novedades</h2>
   <p class="lead" data-i18n="news.lead">Las últimas versiones publicadas. La app te avisa sola cuando sale una nueva.</p>
   <div id="releases" class="releases">
@@ -180,18 +195,8 @@
   <p class="center"><a class="btn btn-ghost" href="https://github.com/ChrZazueta/DinoLand3D-3DS/releases" target="_blank" rel="noopener" data-i18n="news.all">Ver todas las versiones</a></p>
 </section>
 
-<!-- ======================================================== apoyar === -->
-<section class="section" id="support">
-  <h2 data-i18n="support.title">Apoya el proyecto</h2>
-  <div class="support">
-    <p data-i18n="support.d">Dino Land 3D es gratis y lo seguirá siendo. Si te gusta y quieres invitarme un café, se agradece muchísimo. ☕</p>
-    <a class="btn btn-kofi" href="https://ko-fi.com/chrisplay" target="_blank" rel="noopener"><span aria-hidden="true">☕</span> <span data-i18n="support.btn">Invítame un café en Ko-fi</span></a>
-    <iframe id="kofiframe" src="https://ko-fi.com/chrisplay/?hidefeed=true&amp;widget=true&amp;embed=true&amp;preview=true" title="Ko-fi: chrisplay" height="712" loading="lazy"></iframe>
-  </div>
-</section>
-
 <!-- ============================================================ FAQ === -->
-<section class="section" id="faq">
+<section class="section alt" id="faq">
   <h2 data-i18n="faq.title">Preguntas frecuentes</h2>
   <div class="faq">
     <details><summary data-i18n="q1.q">¿Incluye los juegos?</summary><p data-i18n="q1.a">No. Solo es la aplicación; necesitas los volcados de tus propios cartuchos. Sin ROMs, la app te dice dónde ponerlas.</p></details>
