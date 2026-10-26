@@ -163,20 +163,14 @@
       </details>
     </li>
     <li>
-      <h3 data-i18n="s4.t">Activa el sonido (una sola vez)</h3>
-      <p data-i18n-html="s4.d">El audio necesita el archivo <code>dspfirm.cdc</code>, que sale de tu propia consola (no se puede distribuir). Si otros juegos homebrew ya tienen sonido, ya lo tienes. Si no:</p>
-      <ol class="substeps">
-        <li data-i18n-html="s4.a">Descarga <a href="https://github.com/zoogie/DSP1/releases/latest" target="_blank" rel="noopener">DSP1</a> (<code>DSP1.cia</code> o <code>DSP1.3dsx</code>).</li>
-        <li data-i18n-html="s4.b">Instálalo con FBI o cópialo a <code>/3ds/</code> y ábrelo una vez.</li>
-        <li data-i18n-html="s4.c">Crea <code>sdmc:/3ds/dspfirm.cdc</code> solo. Pulsa START para salir; ya lo puedes borrar.</li>
-      </ol>
+      <h3 data-i18n="s4.t">¡A jugar!</h3>
+      <p data-i18n="s4.d">Abre Dino Land 3D desde el menú HOME (o el Homebrew Launcher) y elige tu juego.</p>
     </li>
   </ol>
   <div class="tree" aria-label="SD">
 <pre>sd:/
 └── 3ds/
     ├── DinoLand3D.3dsx   <span data-i18n="tree.3dsx">← solo si usas el .3dsx</span>
-    ├── dspfirm.cdc       <span data-i18n="tree.dsp">← audio (lo crea DSP1)</span>
     └── DinoLand3D/
         ├── Super.sfc
         ├── Super2.sfc
@@ -204,6 +198,7 @@
     <details><summary data-i18n="q3.q">¿Cómo se activa el 3D?</summary><p data-i18n="q3.a">Sube el deslizador 3D durante el juego. En Ajustes → 3D puedes apagarlo del todo si prefieres más rendimiento. Con el deslizador abajo no cuesta nada.</p></details>
     <details><summary data-i18n="q4.q">¿Dónde se guardan mis partidas?</summary><p data-i18n="q4.a">En sd:/3ds/DinoLand3D/saves/. Se guardan al pausar, al ir al menú HOME y al salir. Los estados de guardado están en savestates/.</p></details>
     <details><summary data-i18n="q5.q">¿Cómo actualizo?</summary><p data-i18n="q5.a">Con Wi-Fi, la app busca sola al abrirse y te avisa en el menú de juegos; también puedes buscar a mano en Ajustes → Actualizar. Si la instalaste como CIA se reinicia sola ya actualizada; con el .3dsx, ciérrala y vuelve a abrirla. También puedes volver a escanear el QR.</p></details>
+    <details><summary data-i18n="q7.q">No se oye nada, ¿qué hago?</summary><p data-i18n-html="q7.a">A tu consola le falta el firmware de audio (<code>/3ds/dspfirm.cdc</code>); casi siempre ya está porque la guía lo crea al final. Para crearlo: abre el menú de Luma con <strong>L + ↓ + SELECT</strong> → <strong>Miscellaneous options</strong> → <strong>Dump DSP firmware</strong>, y vuelve a abrir la app.</p></details>
     <details><summary data-i18n="q6.q">¿Puedo cambiar el idioma?</summary><p data-i18n="q6.a">Sí: Ajustes → Idioma cambia entre español e inglés al momento.</p></details>
   </div>
 </section>
