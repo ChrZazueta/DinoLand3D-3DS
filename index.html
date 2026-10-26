@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dino Land 3D: Cape &amp; Egg Collection</title>
+<meta name="description" content="Dino Land 3D: Cape & Egg Collection — una colección de dos clásicos de plataformas de 16 bits para Nintendo 3DS, con pantalla táctil viva, 3D por capas y actualizaciones con un toque.">
+<meta property="og:title" content="Dino Land 3D: Cape &amp; Egg Collection">
+<meta property="og:description" content="Dos clásicos de 16 bits en tu 3DS, con la pantalla táctil como panel interactivo y 3D por capas.">
+<meta property="og:image" content="assets/img/logo.png">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#top"><img src="assets/img/icon.png" alt="" width="32" height="32"><span>Dino Land 3D</span></a>
+  <nav class="nav">
+    <a href="#features" data-i18n="nav.features">Características</a>
+    <a href="#gallery" data-i18n="nav.gallery">Galería</a>
+    <a href="#install" data-i18n="nav.install">Instalación</a>
+    <a href="#news" data-i18n="nav.news">Novedades</a>
+    <a href="#faq" data-i18n="nav.faq">Preguntas</a>
+  </nav>
+  <button class="lang" id="lang" type="button" aria-label="Language">EN</button>
+</header>
+
+<main id="top">
+
+<!-- ======================================================= portada === -->
+<section class="hero">
+  <div class="sky" aria-hidden="true">
+    <span class="cloud c1"></span><span class="cloud c2"></span><span class="cloud c3"></span>
+  </div>
+  <div class="hero-inner">
+    <img class="logo" src="assets/img/logo.png" alt="Dino Land 3D: Cape & Egg Collection" width="900" height="361">
+    <p class="tagline" data-i18n="hero.tagline">Dos clásicos de plataformas de 16 bits en tu Nintendo 3DS: la pantalla táctil se convierte en un panel vivo y el 3D separa el escenario en capas.</p>
+    <div class="cta">
+      <a class="btn btn-primary" id="download" href="https://github.com/ChrZazueta/DinoLand3D-3DS/releases/latest/download/DinoLand3D.3dsx">
+        <span class="btn-icon" aria-hidden="true">⬇</span>
+        <span><span data-i18n="hero.download">Descargar</span> <span class="ver" id="ver">.3dsx</span></span>
+      </a>
+      <a class="btn btn-ghost" href="#install" data-i18n="hero.howto">Cómo instalar</a>
+    </div>
+    <p class="note" data-i18n-html="hero.note">Necesitas <b>tus propias copias</b> de los cartuchos. Aquí no se distribuye ninguna ROM.</p>
+  </div>
+  <div class="hills" aria-hidden="true"></div>
+</section>
+
+<!-- ================================================ características === -->
+<section class="section" id="features">
+  <h2 data-i18n="features.title">Lo que trae</h2>
+  <p class="lead" data-i18n="features.lead">No es solo un emulador con un menú: cada pantalla está pensada para jugar en la 3DS.</p>
+  <div class="grid">
+    <article class="card">
+      <div class="badge b-red">✋</div>
+      <h3 data-i18n="f.touch.t">Pantalla táctil viva</h3>
+      <p data-i18n="f.touch.d">Contadores, progreso por mundo, mapa, inventario y ajustes siempre a un toque, con el estilo de cada juego.</p>
+    </article>
+    <article class="card">
+      <div class="badge b-blue">3D</div>
+      <h3 data-i18n="f.3d.t">3D por capas</h3>
+      <p data-i18n="f.3d.d">Con el deslizador, el fondo se va hacia atrás, el escenario queda en la pantalla y los personajes salen hacia ti.</p>
+    </article>
+    <article class="card">
+      <div class="badge b-yellow">▤</div>
+      <h3 data-i18n="f.bar.t">Barra de estado abajo</h3>
+      <p data-i18n="f.bar.d">La barra original se muda a la pantalla táctil: arriba queda la imagen del juego completa, sin nada encima.</p>
+    </article>
+    <article class="card">
+      <div class="badge b-green">⛰</div>
+      <h3 data-i18n="f.bg.t">El nivel también abajo</h3>
+      <p data-i18n="f.bg.d">El fondo del nivel en el que estás se ve detrás del panel táctil y se mueve con la cámara.</p>
+    </article>
+    <article class="card">
+      <div class="badge b-yellow">◉</div>
+      <h3 data-i18n="f.files.t">Archivos con un toque</h3>
+      <p data-i18n="f.files.d">Elige tu partida tocándola: la app recorre el menú del juego por ti.</p>
+    </article>
+    <article class="card">
+      <div class="badge b-red">★</div>
+      <h3 data-i18n="f.states.t">Estados de guardado</h3>
+      <p data-i18n="f.states.d">Tres ranuras por juego con miniatura y fecha, para guardar y volver en cualquier momento.</p>
+    </article>
+    <article class="card">
+      <div class="badge b-blue">⟳</div>
+      <h3 data-i18n="f.update.t">Se actualiza solo</h3>
+      <p data-i18n="f.update.d">Con Wi-Fi avisa cuando hay versión nueva y se instala con un toque, sin sacar la SD.</p>
+    </article>
+    <article class="card">
+      <div class="badge b-green">Aa</div>
+      <h3 data-i18n="f.lang.t">Español e inglés</h3>
+      <p data-i18n="f.lang.d">Toda la interfaz en los dos idiomas; se cambia desde Ajustes y se recuerda.</p>
+    </article>
+    <article class="card">
+      <div class="badge b-yellow">⚡</div>
+      <h3 data-i18n="f.perf.t">Pensado para la Old 3DS</h3>
+      <p data-i18n="f.perf.d">Emulación por GPU a 60 fps; la interfaz se dibuja una vez y se reutiliza para no robarle tiempo al juego.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ======================================================== galería === -->
+<section class="section alt" id="gallery">
+  <h2 data-i18n="gallery.title">Así se ve la pantalla táctil</h2>
+  <p class="lead" data-i18n="gallery.lead">Capturas reales de la pantalla inferior.</p>
+  <div class="shots">
+    <figure class="ds"><div class="screen"><img src="assets/img/screen_level.png" alt="" loading="lazy" width="640" height="480"></div>
+      <figcaption data-i18n="g.level">En un nivel: contadores, progreso de cada mundo y botones.</figcaption></figure>
+    <figure class="ds"><div class="screen"><img src="assets/img/screen_info.png" alt="" loading="lazy" width="640" height="480"></div>
+      <figcaption data-i18n="g.info">INFO: todo lo que llevas en el nivel de un vistazo.</figcaption></figure>
+    <figure class="ds"><div class="screen"><img src="assets/img/screen_menu.png" alt="" loading="lazy" width="640" height="480"></div>
+      <figcaption data-i18n="g.menu">Ajustes: estados, pantalla, filtro, 3D, idioma y más.</figcaption></figure>
+    <figure class="ds"><div class="screen"><img src="assets/img/screen_update.png" alt="" loading="lazy" width="640" height="480"></div>
+      <figcaption data-i18n="g.update">Actualizaciones desde la propia consola.</figcaption></figure>
+  </div>
+</section>
+
+<!-- =================================================== instalación === -->
+<section class="section" id="install">
+  <h2 data-i18n="install.title">Instalación</h2>
+  <ol class="steps">
+    <li>
+      <h3 data-i18n="s1.t">Consola con homebrew</h3>
+      <p data-i18n-html="s1.d">Una 3DS, 2DS o New 3DS con Luma3DS. Si aún no lo tienes, sigue <a href="https://3ds.hacks.guide/" target="_blank" rel="noopener">3ds.hacks.guide</a>.</p>
+    </li>
+    <li>
+      <h3 data-i18n="s2.t">Descarga la app</h3>
+      <p data-i18n-html="s2.d">Copia <code>DinoLand3D.3dsx</code> a la carpeta <code>/3ds/</code> de la SD. Aparecerá en el Homebrew Launcher.</p>
+    </li>
+    <li>
+      <h3 data-i18n="s3.t">Tus ROMs</h3>
+      <p data-i18n-html="s3.d">Haz el volcado de tus cartuchos (versión de EE. UU.) y cópialos como <code>Super.sfc</code> (el de 1990) y <code>Super2.sfc</code> (el de 1995). También valen <code>.smc</code> o sin extensión, con o sin cabecera de 512 bytes.</p>
+      <details class="hashes">
+        <summary data-i18n="s3.hash">Comprobar mis ROMs (SHA-1 sin cabecera)</summary>
+        <p><code>Super.sfc</code> · 512 KB<br><code class="hash">6b47bb75d16514b6a476aa0c73a683a2a4c18765</code></p>
+        <p><code>Super2.sfc</code> · 2 MB<br><code class="hash">c807f2856f44fb84326fac5b462340dcdd0471f8</code></p>
+      </details>
+    </li>
+    <li>
+      <h3 data-i18n="s4.t">Sonido</h3>
+      <p data-i18n-html="s4.d">Para el audio hace falta <code>dspfirm.cdc</code> en <code>/3ds/</code>. Si no lo tienes, créalo con el DSP1 de la guía.</p>
+    </li>
+  </ol>
+  <div class="tree" aria-label="SD">
+<pre>sd:/
+└── 3ds/
+    ├── DinoLand3D.3dsx
+    ├── dspfirm.cdc
+    └── DinoLand3D/
+        ├── Super.sfc
+        ├── Super2.sfc
+        ├── saves/        <span data-i18n="tree.saves">← partidas (se crean solas)</span>
+        └── savestates/   <span data-i18n="tree.states">← estados de guardado</span></pre>
+  </div>
+</section>
+
+<!-- ======================================================= novedades === -->
+<section class="section alt" id="news">
+  <h2 data-i18n="news.title">Novedades</h2>
+  <p class="lead" data-i18n="news.lead">Las últimas versiones publicadas. La app te avisa sola cuando sale una nueva.</p>
+  <div id="releases" class="releases">
+    <p class="muted" data-i18n="news.loading">Cargando versiones…</p>
+  </div>
+  <p class="center"><a class="btn btn-ghost" href="https://github.com/ChrZazueta/DinoLand3D-3DS/releases" target="_blank" rel="noopener" data-i18n="news.all">Ver todas las versiones</a></p>
+</section>
+
+<!-- ============================================================ FAQ === -->
+<section class="section" id="faq">
+  <h2 data-i18n="faq.title">Preguntas frecuentes</h2>
+  <div class="faq">
+    <details><summary data-i18n="q1.q">¿Incluye los juegos?</summary><p data-i18n="q1.a">No. Solo es la aplicación; necesitas los volcados de tus propios cartuchos. Sin ROMs, la app te dice dónde ponerlas.</p></details>
+    <details><summary data-i18n="q2.q">¿Funciona en una Old 3DS?</summary><p data-i18n="q2.a">Sí, es la consola de referencia. El juego de 1990 va a 60 fps. El de 1995 usa un chip especial del cartucho y en escenas con muchos objetos rotando o escalando puede bajar en una Old 3DS; en una New 3DS va completo.</p></details>
+    <details><summary data-i18n="q3.q">¿Cómo se activa el 3D?</summary><p data-i18n="q3.a">Sube el deslizador 3D durante el juego. En Ajustes → 3D puedes apagarlo del todo si prefieres más rendimiento. Con el deslizador abajo no cuesta nada.</p></details>
+    <details><summary data-i18n="q4.q">¿Dónde se guardan mis partidas?</summary><p data-i18n="q4.a">En sd:/3ds/DinoLand3D/saves/. Se guardan al pausar, al ir al menú HOME y al salir. Los estados de guardado están en savestates/.</p></details>
+    <details><summary data-i18n="q5.q">¿Cómo actualizo?</summary><p data-i18n="q5.a">Con Wi-Fi, la app busca sola al abrirse y te avisa en el menú de juegos. También puedes buscar a mano en Ajustes → Actualizar. Después de instalar, cierra y vuelve a abrir la app.</p></details>
+    <details><summary data-i18n="q6.q">¿Puedo cambiar el idioma?</summary><p data-i18n="q6.a">Sí: Ajustes → Idioma cambia entre español e inglés al momento.</p></details>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="ground" aria-hidden="true"></div>
+  <p data-i18n="footer.legal">Proyecto de aficionado sin ánimo de lucro, no afiliado ni respaldado por ningún fabricante de consolas. No se distribuye ninguna ROM ni contenido de terceros. Basado en snes9x_3ds.</p>
+  <p class="muted">Dino Land 3D: Cape &amp; Egg Collection · <a href="https://github.com/ChrZazueta/DinoLand3D-3DS" target="_blank" rel="noopener">GitHub</a></p>
+</footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>

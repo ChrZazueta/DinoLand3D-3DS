@@ -1,0 +1,227 @@
+/* Dino Land 3D — web del port. Colores del logo: rojo, verde, azul y amarillo sobre cielo y colinas. */
+:root {
+  --sky-top: #5cb4f8;
+  --sky-bottom: #c8ecff;
+  --grass: #4cbc4c;
+  --grass-dark: #2c8c34;
+  --dirt: #c88840;
+  --ink: #1c1c2c;
+  --paper: #fffaf0;
+  --card: #ffffff;
+  --muted: #5a6478;
+  --red: #e83c30;
+  --green: #3cb44c;
+  --blue: #3c8ce8;
+  --yellow: #f8c028;
+  --line: #1c1c2c;
+  --shadow: 0 4px 0 var(--line);
+  --radius: 14px;
+  --page-bg: #fffaf0;
+  --alt-bg: #eef8ff;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ink: #f2f4fa;
+    --paper: #161a26;
+    --card: #1f2433;
+    --muted: #a6aec2;
+    --line: #3b4560;
+    --page-bg: #121520;
+    --alt-bg: #181d2b;
+  }
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: "Nunito", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--page-bg);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; }
+a { color: var(--blue); }
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: .92em;
+  background: rgba(60, 140, 232, .12);
+  padding: .1em .35em;
+  border-radius: 6px;
+}
+
+/* ------------------------------------------------------------ barra -- */
+.topbar {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; gap: 16px;
+  padding: 10px 20px;
+  background: rgba(255, 250, 240, .92);
+  backdrop-filter: blur(8px);
+  border-bottom: 3px solid var(--line);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .topbar { background: rgba(18, 21, 32, .92); }
+}
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink);
+  font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 1.2rem; }
+.brand img { border-radius: 8px; }
+.nav { display: flex; gap: 18px; margin-left: auto; }
+.nav a { color: var(--ink); text-decoration: none; font-weight: 800; font-size: .95rem; }
+.nav a:hover { color: var(--red); }
+.lang {
+  font: 800 .85rem "Nunito", sans-serif; cursor: pointer;
+  border: 3px solid var(--line); border-radius: 10px; padding: 4px 10px;
+  background: var(--yellow); color: #1c1c2c; box-shadow: 0 3px 0 var(--line);
+}
+.lang:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--line); }
+@media (max-width: 760px) { .nav { display: none; } .lang { margin-left: auto; } }
+
+/* ----------------------------------------------------------- portada -- */
+.hero {
+  position: relative; overflow: hidden;
+  background: linear-gradient(var(--sky-top), var(--sky-bottom));
+  padding: 56px 16px 150px;
+  text-align: center;
+}
+.hero-inner { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; }
+.logo { width: min(760px, 100%); filter: drop-shadow(0 6px 0 rgba(0, 0, 0, .18)); }
+.tagline { font-size: clamp(1.05rem, 2.4vw, 1.3rem); font-weight: 800; color: #1c1c2c; max-width: 640px; margin: 18px auto 26px; }
+.note { color: #1c1c2c; font-size: .95rem; margin-top: 18px; }
+.cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font: 800 1.05rem "Nunito", sans-serif; text-decoration: none;
+  padding: 12px 22px; border-radius: 14px; border: 3px solid var(--line);
+  box-shadow: 0 5px 0 var(--line); transition: transform .08s, box-shadow .08s;
+}
+.btn:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--line); }
+.btn-primary { background: var(--green); color: #fff; text-shadow: 0 2px 0 rgba(0, 0, 0, .35); }
+.btn-primary:hover { background: #46c456; }
+.btn-ghost { background: #fff; color: #1c1c2c; }
+.btn-icon { font-size: 1.3em; }
+.ver { font-family: "Press Start 2P", monospace; font-size: .62em; opacity: .95; }
+
+.sky { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.cloud {
+  position: absolute; width: 120px; height: 40px; border-radius: 40px; background: #fff;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, .06);
+  animation: drift 60s linear infinite;
+}
+.cloud::before, .cloud::after { content: ""; position: absolute; background: #fff; border-radius: 50%; }
+.cloud::before { width: 54px; height: 54px; left: 18px; top: -26px; }
+.cloud::after { width: 40px; height: 40px; left: 60px; top: -16px; }
+.c1 { top: 60px; left: -10%; }
+.c2 { top: 150px; left: 40%; transform: scale(.75); animation-duration: 80s; animation-delay: -30s; }
+.c3 { top: 30px; left: 75%; transform: scale(.9); animation-duration: 70s; animation-delay: -50s; }
+@keyframes drift { from { translate: -20vw 0; } to { translate: 120vw 0; } }
+@media (prefers-reduced-motion: reduce) { .cloud { animation: none; } }
+
+/* Colinas redondas con contorno, como las del logo. */
+.hills {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 160px; z-index: 1;
+  background:
+    radial-gradient(ellipse 22% 90% at 12% 100%, var(--grass) 98%, transparent 100%),
+    radial-gradient(ellipse 28% 120% at 45% 100%, #5ccc58 98%, transparent 100%),
+    radial-gradient(ellipse 24% 80% at 82% 100%, var(--grass) 98%, transparent 100%);
+}
+.hills::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 26px;
+  background:
+    linear-gradient(var(--grass-dark) 0 4px, var(--dirt) 4px 100%);
+  border-top: 3px solid var(--line);
+}
+
+/* --------------------------------------------------------- secciones -- */
+.section { padding: 72px 20px; max-width: 1120px; margin: 0 auto; }
+.section.alt { max-width: none; background: var(--alt-bg); }
+.section.alt > * { max-width: 1080px; margin-left: auto; margin-right: auto; }
+h2 {
+  font-family: "Baloo 2", sans-serif; font-weight: 800;
+  font-size: clamp(1.8rem, 4vw, 2.6rem); margin: 0 0 6px; text-align: center;
+}
+h3 { font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 1.2rem; margin: 6px 0 4px; }
+.lead { text-align: center; color: var(--muted); font-size: 1.08rem; margin: 0 auto 36px; max-width: 640px; }
+.center { text-align: center; }
+.muted { color: var(--muted); }
+
+/* Tarjetas con relieve, como bloques del juego. */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 20px; }
+@media (min-width: 980px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+.card {
+  background: var(--card); border: 3px solid var(--line); border-radius: var(--radius);
+  padding: 20px; box-shadow: var(--shadow);
+}
+.card p { margin: 0; color: var(--muted); }
+.badge {
+  width: 46px; height: 46px; display: grid; place-items: center;
+  border: 3px solid var(--line); border-radius: 10px; color: #fff;
+  font: 800 1.15rem "Baloo 2", sans-serif; text-shadow: 0 2px 0 rgba(0, 0, 0, .3);
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .2), inset 0 3px 0 rgba(255, 255, 255, .35);
+}
+.b-red { background: var(--red); } .b-green { background: var(--green); }
+.b-blue { background: var(--blue); } .b-yellow { background: var(--yellow); color: #1c1c2c; text-shadow: none; }
+
+/* -------------------------------------------------------------- galería -- */
+.shots { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr)); gap: 30px; max-width: 920px; }
+.ds { margin: 0; }
+.ds .screen {
+  background: #2a2d36; padding: 14px; border-radius: 18px;
+  border: 3px solid var(--line); box-shadow: var(--shadow);
+}
+.ds img { display: block; width: 100%; border-radius: 4px; image-rendering: auto; }
+.ds figcaption { text-align: center; font-weight: 600; color: var(--muted); margin-top: 12px; font-size: .95rem; }
+
+/* ---------------------------------------------------------- instalación -- */
+.steps { list-style: none; padding: 0; margin: 0 auto; max-width: 760px; counter-reset: s; }
+.steps li {
+  position: relative; padding: 4px 0 22px 66px; counter-increment: s;
+}
+.steps li::before {
+  content: counter(s); position: absolute; left: 0; top: 0;
+  width: 46px; height: 46px; display: grid; place-items: center;
+  background: var(--yellow); color: #1c1c2c; border: 3px solid var(--line); border-radius: 10px;
+  font: 800 1.2rem "Baloo 2", sans-serif; box-shadow: 0 3px 0 var(--line);
+}
+.steps p { margin: 0; color: var(--muted); }
+.hashes { margin-top: 10px; }
+.hashes summary { cursor: pointer; font-weight: 800; color: var(--blue); }
+.hash { word-break: break-all; }
+.tree {
+  max-width: 760px; margin: 12px auto 0; background: #1c1f2a; color: #e8ecf6;
+  border: 3px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); overflow-x: auto;
+}
+.tree pre { margin: 0; padding: 18px 22px; font: .95rem/1.6 ui-monospace, Menlo, monospace; }
+.tree span { color: #9fe39a; }
+
+/* ----------------------------------------------------------- novedades -- */
+.releases { display: grid; gap: 16px; max-width: 760px; margin: 0 auto 26px; }
+.release {
+  background: var(--card); border: 3px solid var(--line); border-radius: var(--radius);
+  padding: 16px 20px; box-shadow: var(--shadow);
+}
+.release header { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.release h3 { margin: 0; }
+.release time { color: var(--muted); font-size: .9rem; }
+.release .tag { font: .7rem "Press Start 2P", monospace; background: var(--green); color: #fff;
+  padding: 4px 6px; border-radius: 6px; border: 2px solid var(--line); }
+.release ul { margin: 8px 0 0; padding-left: 20px; color: var(--muted); }
+.release p { color: var(--muted); margin: 8px 0 0; }
+
+/* ----------------------------------------------------------------- FAQ -- */
+.faq { max-width: 760px; margin: 0 auto; display: grid; gap: 12px; }
+.faq details {
+  background: var(--card); border: 3px solid var(--line); border-radius: var(--radius);
+  padding: 14px 18px; box-shadow: 0 3px 0 var(--line);
+}
+.faq summary { cursor: pointer; font-weight: 800; }
+.faq p { color: var(--muted); margin: 10px 0 0; }
+
+/* -------------------------------------------------------------- pie -- */
+.footer { position: relative; text-align: center; padding: 70px 20px 30px; font-size: .9rem; }
+.footer p { max-width: 720px; margin: 8px auto; }
+.ground {
+  position: absolute; left: 0; right: 0; top: 0; height: 30px;
+  background: linear-gradient(var(--grass) 0 6px, var(--grass-dark) 6px 9px, var(--dirt) 9px 100%);
+  border-top: 3px solid var(--line); border-bottom: 3px solid var(--line);
+}
