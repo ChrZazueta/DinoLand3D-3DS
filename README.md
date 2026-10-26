@@ -24,10 +24,20 @@
 ## Instalación / Installation
 
 1. Consola con Luma3DS ([3ds.hacks.guide](https://3ds.hacks.guide/)) · console with Luma3DS.
-2. Copia `DinoLand3D.3dsx` (de [Releases](https://github.com/ChrZazueta/DinoLand3D-3DS/releases/latest)) a `sdmc:/3ds/` · copy it to `sdmc:/3ds/`.
+2. Instala `DinoLand3D.cia` con FBI (recomendado) o copia `DinoLand3D.3dsx` a `sdmc:/3ds/` · install the CIA with FBI (recommended) or copy the .3dsx to `sdmc:/3ds/`. Ambos en / both in [Releases](https://github.com/ChrZazueta/DinoLand3D-3DS/releases/latest).
+
+   **QR para FBI** (Remote Install → Scan QR Code) · **QR for FBI**:
+
+   <img src="assets/img/qr-dinoland3d.svg" width="200" alt="QR: DinoLand3D.cia">
+
 3. Copia tus ROMs a `sdmc:/3ds/DinoLand3D/` como `Super.sfc` (1990) y `Super2.sfc` (1995) · copy your ROMs there with those names.
    SHA-1 sin cabecera / without header: `Super.sfc` `6b47bb75d16514b6a476aa0c73a683a2a4c18765` · `Super2.sfc` `c807f2856f44fb84326fac5b462340dcdd0471f8`
 4. Audio: `sdmc:/3ds/dspfirm.cdc` (DSP1).
+
+## Apoya el proyecto / Support
+
+Dino Land 3D es gratis. Si te gusta, puedes invitarme un café · It's free; if you enjoy it, you can buy me a coffee:
+**[ko-fi.com/chrisplay](https://ko-fi.com/chrisplay)** ☕
 
 ---
 Proyecto de aficionado sin ánimo de lucro, no afiliado a ningún fabricante de consolas. Basado en [snes9x_3ds](https://github.com/matbo87/snes9x_3ds).
