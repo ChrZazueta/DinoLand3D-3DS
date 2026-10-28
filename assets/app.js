@@ -64,7 +64,8 @@
     fetch("https://api.github.com/repos/" + REPO + "/releases?per_page=5", { headers: { Accept: "application/vnd.github+json" } })
       .then(function (r) { return r.ok ? r.json() : []; })
       .then(function (list) {
-        releases = (list || []).filter(function (r) { return !r.draft; });
+        // Solo desde la 1.0: las versiones 0.x de prueba no se muestran.
+        releases = (list || []).filter(function (r) { return !r.draft && !/^v?0\./.test(r.tag_name); });
         if (releases.length) document.getElementById("ver").textContent = releases[0].tag_name;
         renderReleases();
       })
